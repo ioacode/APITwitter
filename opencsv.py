@@ -1,6 +1,9 @@
 
+import nltk
+import json
 import pandas as pd  
-
+from nltk.corpus import stopwords
+from nltk.tokenize import sent_tokenize, word_tokenize
 
 rd = pd.read_csv("data.csv")
 
@@ -17,3 +20,11 @@ arradatabaru = []
 for i, title in enumerate (titleCsv):  
     arradatabaru.append(title)
 print ("--- membuat array baru berdasarkan data sebelumnya --->",arradatabaru)
+
+datatokeniza = []
+dataleght = len(datatokenize)
+for i, title in enumerate(arradata):
+   kalimat = title.translate(str.maketrans('','',string.punctuation)).lower()
+   datatokenize.append( word_tokenize(kalimat))
+   
+print("--------- data dari datatokenize ----->", datatokenize)
